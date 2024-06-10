@@ -54,3 +54,7 @@ Follow the gradient of the Z' as Z'' reaches minimum gain quickly.
 Wait for the minimum level and trace the shortest path.
 Apply descent on that pathway.
 """
+
+
+services = []
+services.append({jupyter-client : starts managed servers, logging-tool : tracks activities in external spaces, manager-tool : creates trace from activation functions})
