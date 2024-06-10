@@ -45,5 +45,12 @@ Have parallel channels given to each direction where their sides respectively ca
 For every update, update the components across all effected cross-sections when mixed into a stereo pair of states.
 
 If all independent channels can be effected by their master product, then should their channel effect the devices that measures or represents the variables?
+Can one constrained constraint the other?
+"""
 
+"""
+Raise the gain by Z percent.
+Follow the gradient of the Z' as Z'' reaches minimum gain quickly.
+Wait for the minimum level and trace the shortest path.
+Apply descent on that pathway.
 """
