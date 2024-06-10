@@ -1,0 +1,13 @@
+services = []
+services.append({jupyter-client : starts managed servers, logging-tool : tracks activities in external spaces, manager-tool : creates trace from activation functions})
+
+jupyter-client is a module covering functions for watching jupyter servers for all kinds of activities.
+- next we need information understanding system to build knowledge out of the data logged.
+- tasks: find what api tools are available, connect them to internal services
+
+
+logging-tool provides tracking algorithms.
+- next we learn what kind of protocols would we need for all kinds of access records.
+- tasks: programming structure, quick and easy callable functions, standards and practices
+
+manager-tool provides tracing and (..).
