@@ -16,20 +16,22 @@ class Network(torch.nn.Module):
         z = F.relu(self.fc2(y))
         return x**2 + y**2 + z**2
 
-def serialize_model(model, file_path):
-    torch.save(model.state_dict(), file_path)
+def load_data(file_path):
+    with open(file_path, 'rb') as f:
+        data = pickle.load(f)
+    return data
 
-def deserialize_model(file_path, model_class, *args, **kwargs):
-    model = model_class(*args, **kwargs)
-    model.load_state_dict(torch.load(file_path))
-    return model
+def save_data(data, file_path):
+    with open(file_path, 'wb') as f:
+        pickle.dump(data, f)
 
 def train_network(model, data, epochs=10, learning_rate=0.001):
     optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
     loss_fn = torch.nn.MSELoss()
 
     for epoch in range(epochs):
-        for inputs, targets in data:
+        for batch in data:
+            inputs, targets = batch
             optimizer.zero_grad()
             outputs = model(inputs)
             loss = loss_fn(outputs, targets)
@@ -43,7 +45,8 @@ def evaluate_model(model, data):
     total = 0
 
     with torch.no_grad():
-        for inputs, targets in data:
+        for batch in data:
+            inputs, targets = batch
             outputs = model(inputs)
             _, predicted = torch.max(outputs.data, 1)
             total += targets.size(0)
@@ -53,34 +56,36 @@ def evaluate_model(model, data):
     print(f"Accuracy: {accuracy:.2f}%")
     return accuracy
 
-def copy_model(source_model, model_class, *args, **kwargs):
-    # Serialize the source model
-    temp_file = f"{uuid.uuid4().hex}.pth"
-    serialize_model(source_model, temp_file)
+def copy(source):
+    # Serialize the source object to a stream
+    serialized_source = pickle.dumps(source)
 
-    # Deserialize to create a clone
-    cloned_model = deserialize_model(temp_file, model_class, *args, **kwargs)
+    # Create a transformer model (placeholder)
+    transformer_model = Network(input_size=128, hidden_size=256, output_size=128)  # Adjust sizes as needed
 
-    # Clean up the temporary file
-    os.remove(temp_file)
+    # Encode stream to process using model
+    # For simplicity, we will assume serialized_source is already in the required format for processing by the model
+    encoded_stream = transformer_model(torch.tensor(np.frombuffer(serialized_source, dtype=np.uint8), dtype=torch.float32))
 
-    return cloned_model
+    # Decode prediction to process using pickle
+    predicted_stream = encoded_stream.numpy().tobytes()
+    deserialized_object = pickle.loads(predicted_stream)
+
+    # Compute accuracy of expression and backpropagate loss
+    # This is a placeholder, in a real scenario we need ground truth to compute loss
+    accuracy = evaluate_model(transformer_model, [(torch.tensor(np.frombuffer(serialized_source, dtype=np.uint8), dtype=torch.float32), torch.tensor(np.frombuffer(predicted_stream, dtype=np.uint8), dtype=torch.float32))])
+
+    # Train until it reconstructs the complete functional serial code
+    train_network(transformer_model, [(torch.tensor(np.frombuffer(serialized_source, dtype=np.uint8), dtype=torch.float32), torch.tensor(np.frombuffer(predicted_stream, dtype=np.uint8), dtype=torch.float32))])
+
+    # Use the final serialized code to realize the python object
+    final_serialized_code = transformer_model(torch.tensor(np.frombuffer(serialized_source, dtype=np.uint8), dtype=torch.float32)).numpy().tobytes()
+    final_object = pickle.loads(final_serialized_code)
+
+    # Return the cloner model
+    return transformer_model, final_object
 
 # Example usage:
-# Define the original model
-input_size = 10
-hidden_size = 20
-output_size = 5
-original_model = Network(input_size, hidden_size, output_size)
-
-# Simulate some training data
-data = [(torch.randn(10, input_size), torch.randn(10, output_size)) for _ in range(100)]
-
-# Train the original model
-train_network(original_model, data)
-
-# Clone the model
-cloned_model = copy_model(original_model, Network, input_size, hidden_size, output_size)
-
-# Evaluate the cloned model
-evaluate_model(cloned_model, data)
+# source_object = {'example': 'data'}
+# cloner_model, cloned_object = copy(source_object)
+# print(cloned_object)
