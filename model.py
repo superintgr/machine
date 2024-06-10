@@ -1,91 +1,49 @@
-import torch
-import torch.nn.functional as F
-import pickle
-import numpy as np
-import os
-import uuid
+"""
+tools ~ schism ~ room ~ live ~ performance ~ entanglement ~ parallel transforms ~ simultaneous coding ~ evolution ~ composition ~ story ~ beauty ~ immeasurable ~ impulse response ~ superposition principle
 
-class Network(torch.nn.Module):
-    def __init__(self, input_size, hidden_size, output_size):
-        super(Network, self).__init__()
-        self.fc1 = torch.nn.Linear(input_size, hidden_size)
-        self.fc2 = torch.nn.Linear(hidden_size, output_size)
+         (central)
+  {left side | right side}
+[eye]                  [eye]             
+            |.|
+        .. .. .. ..
+             !
+           \\ //
+           =====
+    (heart)  |  (~)(+)(-)(.)
 
-    def forward(self, x):
-        y = F.relu(self.fc1(x))
-        z = F.relu(self.fc2(y))
-        return x**2 + y**2 + z**2
+      <BELLY-STORAGE>
 
-def load_data(file_path):
-    with open(file_path, 'rb') as f:
-        data = pickle.load(f)
-    return data
 
-def save_data(data, file_path):
-    with open(file_path, 'wb') as f:
-        pickle.dump(data, f)
 
-def train_network(model, data, epochs=10, learning_rate=0.001):
-    optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
-    loss_fn = torch.nn.MSELoss()
+[leg]                  [leg]
+"""
 
-    for epoch in range(epochs):
-        for batch in data:
-            inputs, targets = batch
-            optimizer.zero_grad()
-            outputs = model(inputs)
-            loss = loss_fn(outputs, targets)
-            loss.backward()
-            optimizer.step()
-        print(f"Epoch {epoch+1}/{epochs}, Loss: {loss.item()}")
 
-def evaluate_model(model, data):
-    model.eval()
-    correct = 0
-    total = 0
+"""
+(-1 -0 +0 +1)
+(ab bc cd de)
+(ed dc cb ba)
+(1+ 0+ 0- 1-)
 
-    with torch.no_grad():
-        for batch in data:
-            inputs, targets = batch
-            outputs = model(inputs)
-            _, predicted = torch.max(outputs.data, 1)
-            total += targets.size(0)
-            correct += (predicted == targets).sum().item()
 
-    accuracy = 100 * correct / total
-    print(f"Accuracy: {accuracy:.2f}%")
-    return accuracy
+locate file (*) & push it to (%)
+(%) contains (*) & reads from left to right until EOF
+EOF happened & (%) looses (*)
+(%) has (*) & EOF is not in (L/R)
+when L is seen & R is not seen, (%) looses R from (*)
+R is seen & EOF is not seen (%) looses R from (*)
 
-def copy(source):
-    # Serialize the source object to a stream
-    serialized_source = pickle.dumps(source)
+EOF is seen and (%) has (*) still (%) looses EOF
+(%) should have (*) & (*) has EOF & EOF in (%)
+(*) should have EOF || (%) must have EOF || (%) cannot have (*)
+"""
 
-    # Create a transformer model (placeholder)
-    transformer_model = Network(input_size=128, hidden_size=256, output_size=128)  # Adjust sizes as needed
+"""
+While left eye sees thing that is not in the field of right eye, what side must contained in that view?
+For any change, there must be change across at least one of the side detected last, then from what is seen now all the unseen must effect those from before.
+Have parallel channels given to each direction where their sides respectively captures the directionality along that pathway only.
+For every update, update the components across all effected cross-sections when mixed into a stereo pair of states.
 
-    # Encode stream to process using model
-    # For simplicity, we will assume serialized_source is already in the required format for processing by the model
-    encoded_stream = transformer_model(torch.tensor(np.frombuffer(serialized_source, dtype=np.uint8), dtype=torch.float32))
+If all independent channels can be effected by their master product, then should their channel effect the devices that measures or represents the variables?
 
-    # Decode prediction to process using pickle
-    predicted_stream = encoded_stream.numpy().tobytes()
-    deserialized_object = pickle.loads(predicted_stream)
-
-    # Compute accuracy of expression and backpropagate loss
-    # This is a placeholder, in a real scenario we need ground truth to compute loss
-    accuracy = evaluate_model(transformer_model, [(torch.tensor(np.frombuffer(serialized_source, dtype=np.uint8), dtype=torch.float32), torch.tensor(np.frombuffer(predicted_stream, dtype=np.uint8), dtype=torch.float32))])
-
-    # Train until it reconstructs the complete functional serial code
-    train_network(transformer_model, [(torch.tensor(np.frombuffer(serialized_source, dtype=np.uint8), dtype=torch.float32), torch.tensor(np.frombuffer(predicted_stream, dtype=np.uint8), dtype=torch.float32))])
-
-    # Use the final serialized code to realize the python object
-    final_serialized_code = transformer_model(torch.tensor(np.frombuffer(serialized_source, dtype=np.uint8), dtype=torch.float32)).numpy().tobytes()
-    final_object = pickle.loads(final_serialized_code)
-
-    # Return the cloner model
-    return transformer_model, final_object
-
-# Example usage:
-# source_object = {'example': 'data'}
-# cloner_model, cloned_object = copy(source_object)
-# print(cloned_object)
+"""
