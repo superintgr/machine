@@ -10,4 +10,13 @@ class Network(torch.nn.Module):
         y = torch.nn.functional.relu(self.fc1(x))
         z = torch.nn.functional.relu(self.fc2(y))
         i = x**2 + y**2 + z**2
-        return torch.nn.functional.tanh(i)
+        return i
+
+class Model:
+    def __init__(self, tokens, dimensions, units, heads):
+        self.compute = Network(dimensions, units)
+        self.prepare = Network(units, heads)
+        self.measure = Network(heads, units)
+        self.construct = Network(units, dimensions)
+        self.medium = torch.nn.Embedding(tokens, dimensions)
+        
