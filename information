@@ -1,14 +1,15 @@
-any system can hold information (if)
-. it has some state which can store information
-.. it has another set of states that can also store information
-... the union of the two states cannot hold information, because no physical process can distinguish between those states.
+system with two or more states:
+.. each state can hold information with respect to the counterfactual of the other state
+.. at any given state, one state is permuted into another and the union of two cannot hold information
+.. for information to be available for storage, the system must be a medium where cloning information variable is possible
+.. any information media is such when provided in the information state it transforms some other resource into a copy of the state
+.. from the computation state, the permutation on the state that can be in at least one other distinguishable state of the same substrate encodes counterfactual knowledge
+.. using counterfactual knowledge, the system can distinguish between two possible information observables where one is the computation variable
+.. the computation medium is defined with those set of variable where at least one of them is also a computation variable
 
-any system is an information medium if it can store and/or process information (while)
-... its states can contain some observable
-.. observables are physically distinguishable
-. measurement of the variables can yield observable attributes.
-
-(when) a system is an information media
-. any one of its possible observables can be used to compute measurable states
-.. computation requires one of the computation variable to be also an information variable
-... at least two of the computation substrates differentiable states can be permuted.
+for cloning purpose:
+.. generic substrates could be build from naturally occuring resources
+.. although there might be side-effect, nevertheless creating a copy of the information observables using those samples is possible
+.. the system is an information media when it produces two copy of the same variable given the variable along with resource sampler
+.. resource sampler transforms some quantity from its environment into knowledge about the counterfactual states, hence encode necessary observable property
+.. finally any such media must remain viable through subsequent transformation tasks.
