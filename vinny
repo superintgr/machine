@@ -1,0 +1,35 @@
+tasks and data sources are jointly modeled:
+.. tasks execution environment provides necessary functional states
+.. function of the task should depend on knowledge encoded in the file conten
+.. agent that retrieves any static data value must satisfy the criteria developed by task states
+
+a set of agents:
+.. their individual profiles can form interactive profiles
+.. each agent is capable of processing information based on static knowledge given
+.. for all function of those processes, the agent provides the bases
+.. deterministic behavior and finite scope of knowledge made available
+
+when we prepare an agent with data files:
+.. measure for standard set of queries
+.. define functions of the information based on how much the agent can be caused to capture it
+.. connect multiple agents in the same way
+
+example:
+.. here is a recent notebook
+.. based on content, what should I have known by now
+.. based on knowledge, what kinds of questions that I can expect from her
+.. i would like to have the agent ready with all the necessary memory uninitialized
+.. whenever I can roughly point to something, if I had known, it should also know and in better detail
+
+        config = {
+                data : information,
+                header : find all the crucial classes from the file so that any dropout would leave out possible questions.
+                questions : use the list to prepare eome general purpose questionary
+        }
+
+                make sure that those question almost arbitrary trivial things!
+
+
+compiling everything into a portable policy:
+.. the knowledge should travel with the code
+..
