@@ -1,0 +1,14 @@
+any system can hold information (if)
+. it has some state which can store information
+.. it has another set of states that can also store information
+... the union of the two states cannot hold information, because no physical process can distinguish between those states.
+
+any system is an information medium if it can store and/or process information (while)
+... its states can contain some observable
+.. observables are physically distinguishable
+. measurement of the variables can yield observable attributes.
+
+(when) a system is an information media
+. any one of its possible observables can be used to compute measurable states
+.. computation requires one of the computation variable to be also an information variable
+... at least two of the computation substrates differentiable states can be permuted.
