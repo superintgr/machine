@@ -1,0 +1,25 @@
+continuation of [step] for description model:
+  .. we need a program called channel
+  .. channel could be composed to build other channels
+  .. let any collection of channels be called Mixer
+
+[Mixer]:
+  .. a set of channels that connect to produce new channel
+  .. a mixer output is a channel that produce main output
+  .. main output contains (left, right) tracks
+
+let channel be an ordered collection of at least two input sources and call it Channel:
+.. any input source is called Track
+.. any collection of tracks are ordered set
+.. channel defines how data flow from sources into state substrate
+[state]
+  .. tensor of shape (2 x number of source)
+  .. requires a substrate (tensor) that defines propagation laws
+.. state is transformed via some laws
+.. channel produces sink of shape (number of frames x 2)
+.. sink can be any file path or memory path
+
+next step:
+.. design the substrate and container
+.. create tests for container, channel, mixer, track, propagation
+.. go to [propagation]
