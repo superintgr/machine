@@ -1,0 +1,21 @@
+continues from [propagation] for defining tasks
+.. create an object called Individual
+.. individual requires an identity
+.. identity could be generically sampled
+[individual]
+  .. given an identity, construct an equal length buffer register
+  .. call it memory
+  .. create a variable for storing only the object addresses
+  .. assign each ordered buffer volume to the new variable of type list
+  .. create a process (method) called associate
+  [association]
+    .. iterate over all items is memory
+    .. for each memory amplitude data, swap the places in memory with places in the new variable which is a list
+    .. return True at the end of entire loop
+    .. break out
+[action]
+  .. groups, actions, structures, symmetries
+  .. senses, sizes, complexes of types
+  .. points, permutations, conservations, preserved quantities
+  [substrate]
+    .. go to [substrate]
