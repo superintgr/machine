@@ -14,3 +14,26 @@ what is required:
 .. start three seperate processes
 .. run them redundantly over periods
 .. balance schedule and optimize workload
+
+tracking:
+.. stereo of shape (3 x 192000 x units per 360 days)
+
+mixing:
+.. runs with three channels sent in
+.. compiles with two channels sent out
+
+master:
+.. follows scheduled mix programs
+.. all input channels are routed into the board
+.. board provides monitoring outs to generators
+.. master is produced with main outputs
+.. output tracks are saved
+
+programming:
+.. restore session
+.. sample main
+.. compute transform
+.. update instrumentation
+
+next step:
+.. see [step]
