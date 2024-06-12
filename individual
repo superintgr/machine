@@ -18,4 +18,14 @@ continues from [propagation] for defining tasks
   .. senses, sizes, complexes of types
   .. points, permutations, conservations, preserved quantities
   [substrate]
-    .. go to [substrate]
+    .. go to [/substrate]
+[group]
+  .. arriving from partial [\substrate] on individual
+  .. what are all the groups up to isomorphism?
+  [information]
+    .. for every states of that substrate, the union of all those with their effective action defines information being present
+    .. the computation is when half of the permutated space can produce stability
+    .. stability is when isomorphic
+    .. knowledge define the other half from symmetry
+    next step:
+      .. go to [/substrate]
