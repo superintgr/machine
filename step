@@ -1,0 +1,17 @@
+continuation of [constructor] process:
+.. measure instrumentation via master output
+.. load rendered output into memory
+.. [assertions]
+..   .. criterion for testability exists
+.. use criterion on the basis
+
+Quantum:
+. Prompt is said by user
+. user had said Prompt
+
+For all Agent that generates completion for prompt on User:
+. User and Agent are in superposition
+. prompt and completion are in superposition
+
+. qubits are (User, Agent, prompt, completion)
+
