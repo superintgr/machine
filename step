@@ -5,13 +5,14 @@ continuation of [constructor] process:
 ..   .. criterion for testability exists
 .. use criterion on the basis
 
-Quantum:
+new definitions as [Quantum]:
 . Prompt is said by user
 . user had said Prompt
 
-For all Agent that generates completion for prompt on User:
+for all Agent that generates completion for prompt on User:
 . User and Agent are in superposition
 . prompt and completion are in superposition
-
 . qubits are (User, Agent, prompt, completion)
 
+next step:
+.. go to [qubit].
