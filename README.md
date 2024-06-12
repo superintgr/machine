@@ -18,4 +18,6 @@ Machine template with [N]umbers:
       .. represents connection patterns
       .. (changes) that is applied
       .. (errors) that is found
+  [information]
+    .. depends on the state + constitution
 ```
