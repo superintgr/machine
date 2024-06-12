@@ -1,0 +1,31 @@
+continuation of [qubit]
+.. define how signal must flow in a medium
+.. we call it propagation law for that qubit
+.. laws are described using matrices
+
+[container]
+  .. fixed shape
+  .. positions are occupied
+  .. occupied spaces contain rights
+  [right]
+    .. rights are not transferrible
+    .. rights can compose into left/right
+    .. rights can produce scaled rights only
+  .. individual purchases the right
+
+  [left]
+    .. it is a position
+    .. that position is allocated
+    .. allocation required memory
+    .. memory needs association
+    .. association is defined in terms of two distinct positions
+    .. association is physical information
+
+[next step]
+  .. write program for seeking association
+  .. new data arrives at valid positions
+  .. write program for generating rights
+  .. new rights are responsibilities of an individual
+  .. define transfer program as shift
+  .. write process for transferring right positions
+  .. go to [individual]
