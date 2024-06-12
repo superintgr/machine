@@ -1,5 +1,6 @@
 # machine
 
+```
 Machine template with [N]umbers: 
   .. group of ordered objects
   .. known set
@@ -17,3 +18,4 @@ Machine template with [N]umbers:
       .. represents connection patterns
       .. (changes) that is applied
       .. (errors) that is found
+```
