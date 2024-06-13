@@ -1,0 +1,82 @@
+independent description:
+  .. mixer/console, pusher/puller, pickle/unpickle
+  .. stack/manager, server/transmitter
+  .. processor/accumulator, block/master, render/main
+  .. stack/heap, memory/register, bus/node, driver/antinode
+
+  [standard pipeline]
+    .. configuration file is located
+    .. console is created and state is either loaded or initialized with checkpoint
+    .. master output path is claimed
+    .. stack is created for new messages
+    .. memory for heap is obtained as buffer
+    .. prepared runtime session with all runlength parameters
+    .. using the parameter family, generate global flagging code for indicating when block is being processed and when block is being constructed
+    .. sample from session all frames for finite blocks of set length
+    .. create subroutine that starts block processing on session data for finite number of steps
+    .. pass buffer to the processor scope as yield path per block processed
+    .. write subroutine for handling heap change
+    .. set flags for indicating stack closure, heap transfer, accumulator swap
+    .. use bus system to set driver, delivery assignments
+    .. update all flags to indicate unit changes at different levels
+    .. store checkpoints with given frequency and test criteria
+
+  [change]
+    .. heap-stack relations
+    .. flag-state relations
+    .. volume-count relations
+    .. slave-master relations
+    .. bus-stream relations
+    
+  [parameter]
+    .. bringing two distant relatives together
+    .. introduce an intermediate family of neighbors
+    .. motivate the neighbors to being themselves closer
+    .. motivate the 0 point to push outward if certain distance is trespassed
+    [ABCD]
+      .. (A, B) and (C, D) are each (totalling 4 counts) two dimensional waveforms of stereo kind
+      .. the goal is to swap the mid points of (A and B) and (C and D) so that their sides will contain each other in some manner
+      .. the plan is to use C and D as known parameter family of structures in order to bring some unknown A, B pairs together within (ABCD) subsystems.
+      .. subsystem will be using the same master that produces stereo outputs with (C, D) controlling something about (A, B)
+      .. note that A, B each evolve disjointly and independently
+
+
+
+
+
+next step:
+  .. go to run and see [/length], [/time]
+  .. go to session and see [/run], [/walk]
+  .. go to code and see [/frame], [/block]
+  .. go to processor and see [/sample], [/render]
+  .. go to accumulator and see [/stack], [/heap]
+  .. go to check and see [/point], [/level]
+
+
+sample code:
+  .. console build from checkpoint
+  .. if checkpoint not available, build from config
+
+  .. create data buffer with console config for channels
+  .. create master buffer with empty registers
+
+  .. start collecting samples from all channels
+  .. stop when set number of steps are completed
+  .. update the counter for single cycle taken
+
+  .. send data buffer to block processor
+  .. assign console for core
+  .. set master buffer as the render sink
+
+  .. create new checkpoint after N cycles
+  .. copy old checkpoint to new checkpoint
+  .. keep both in existence
+
+  .. boardcast manually all master changes
+  .. collect boolean flags if assertion is applied
+  .. channels would respond to change that is detected globally
+  
+  .. continue until stopped
+
+  
+
