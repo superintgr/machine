@@ -1,0 +1,26 @@
+network architecture:
+  .. construction phases
+  .. implementation phases
+  .. development jobs
+  .. release campaign
+
+  [construction]
+    .. build site purchased and construction permit attained
+    .. building layout generated and design phase completed
+    .. worker group assigned and resource order placed
+    .. project plan instantiated and schedule system powered
+    .. estimated timeline generated and group union is secured
+  [implementation]
+    .. at each cycle of work, manager appointed inside
+    .. at each cycle of batch, supervisor visit is made
+    .. at each cycle of build, scheduled level is built
+  [development]
+    .. with building team present, shift coordinator init
+    .. with shift period started, state manager init
+    .. with phased completion done, supervisor visit init
+    .. for all work/batch/build cycle enumerated, building code is written
+  [release]
+    .. assert all work + batch * cycle == site planner code
+    .. sample from all channels into campaign statistics
+    .. run standard measurement over all items in campaign
+    .. assert site planner code @ substrate.T == projected image
