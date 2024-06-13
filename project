@@ -1,0 +1,33 @@
+continuation of [github.py] from individual and README.md:
+  .. pending task include SSH business
+  [SSH]
+    .. go to key and come back
+  .. preparing a generic machine requires fundamental course
+  [fundamental]
+    .. clone github repository at given public address
+    .. install dependencies using requirement file
+    .. use that repository content to process generic transformation tasks
+    [generic]
+      .. creating public-private keys
+      .. using standard github tools
+      .. managing system resource from os provided API
+      .. search in local volume
+      .. creating local message passing server (listener-server)
+      .. running commands from python interpret window
+      .. generating templates for ADSR family
+      [ADSR]
+        .. family manages an attack-sustain and decay-release phased structures
+        .. attack : starter program that prepares a new cycle
+        .. sustain : intermediate program that manages run/time and run/length phases
+        .. decay : closure program that drives the execution from active through passive states
+        .. release : exit and return programming of ongoing computation cycles ~ information phases
+
+        next step:
+          .. go to [/adsr] and come back
+  .. pending task include system builder code from generic objects
+  .. pensing task include main program description
+
+next step:
+  .. since this document is very long, we need a quick list outlining fast programming tasks
+  .. before going to main.py, look into premain through [\adsr]
+  .. go to main.py
