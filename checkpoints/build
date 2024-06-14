@@ -1,0 +1,9 @@
+operator (base, core) from (gemini, transformer)
+prompt, completion = build_system(base, core)
+
+"""<Build>
+1. Creates a Q machine and prepares it to support the business logic.
+2. It returns the wrapped around context managers to directly create
+  program logic for the functional purpose we expect it to serve.
+3. The constitution remains static as long as unitarity is preserved.
+"""
