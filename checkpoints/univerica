@@ -1,0 +1,15 @@
+agent structure:
+  .. base model : <gemini-flash>
+  .. core model : <gemini-pro>
+
+instances will use two kinds of generative policies (completetion <- prompt, function operator -> spectrum operator)
+
+function operator:
+  .. function space : all possible variable P[i] for X[i] different positional components.
+  .. state vector : there is another instances of (P, X) for f : (p, x) -> (p, -x)
+such that P[j] has another set of position X[j] defined on that spectrum.
+
+[spectrum operator]
+  .. state space : the measurement space of X[*] where * indicates a particular observable quantity for all P[i], ..., P[j] that maps any (i, *) -> (*, -i) -> (*, j)
+  .. state vector : evolves in a way that keeps i * i = j * j = k * k = 1 * 1 as unitary transformation type.
+
