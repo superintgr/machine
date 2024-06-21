@@ -1,0 +1,14 @@
+prompt : <original user query>,
+object : [
+    {
+        named : <attribute class>, 
+	function : <class property>,
+        counterfactual : [
+	    {
+                change : <mutable property>,
+		description : <counterfactual information>,
+            },
+	],
+    },
+],
+
